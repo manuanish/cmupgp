@@ -2,15 +2,20 @@ import BlogTitle from "@components/BlogTitle";
 import Post from "@components/Post";
 import PageTitle from "@components/PageTitle";
 import Footer from "@components/Footer";
-import {RepoLockedIcon, MarkGithubIcon, GlobeIcon, BookIcon} from '@primer/octicons-react';
-import {FaDiscord, FaInstagram, FaTwitter} from 'react-icons/fa'
+import {
+  RepoLockedIcon,
+  MarkGithubIcon,
+  GlobeIcon,
+  BookIcon,
+} from "@primer/octicons-react";
+import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 
 <PageTitle title="CMU PGP | Home" />
 
 <BlogTitle
   title={
     <span>
-      <RepoLockedIcon size={40}/> CMU PGP
+      <RepoLockedIcon size={50} /> CMU PGP
     </span>
   }
   subTitle="Privacy; Enhanced."
@@ -47,14 +52,14 @@ import {FaDiscord, FaInstagram, FaTwitter} from 'react-icons/fa'
 <Post
   title="How does CMU PGP work?"
   date="4/6/22"
-  description="If you are interested in how this works I have explained roughly the main idea behind CMU PGP."
+  description="If you are interested in how this works I have roughly explained the main idea behind CMU PGP."
   href="/how-does-it-work"
 />
 
 <Post
   title="CMU PGP Demo"
   date="4/6/22"
-  description="A quick demonstration on how CMU PGP works."
+  description="A quick demonstration on how CMU PGP works. (Also, a list of concepts that I used)"
   href="/demo"
 />
 
@@ -63,6 +68,13 @@ import {FaDiscord, FaInstagram, FaTwitter} from 'react-icons/fa'
   date="4/6/22"
   description="If you are interested in how this works I have explained roughly the main idea behind CMU PGP."
   href="/lxxiii"
+/>
+
+<Post
+  title="References/Resources"
+  date="4/6/22"
+  description="A list of references/resources that I used to in the making of this project."
+  href="/references"
 />
 
 <Footer />
