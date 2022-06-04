@@ -1,0 +1,106 @@
+import Header from "@components/Header";
+import Author from "@components/Author";
+import Button from "@components/Button";
+import PageTitle from "@components/PageTitle";
+import {RepoLockedIcon, LightBulbIcon, FileZipIcon} from '@primer/octicons-react'
+import Footer from "@components/Footer";
+
+<PageTitle title="CMU PGP | How does it work?" />
+<Header />
+
+# How does CMU PGP Work?
+<Author author="Manu Anish" date="4/6/22" displayName="manuanish" />
+---
+<br />
+<br />
+
+# <RepoLockedIcon size={32}/> Asymmetric key cryptography
+**Public-key cryptography**, or **asymmetric cryptography**, is a cryptographic system
+that uses pairs of keys. Each pair consists of a public key
+(which may be known to others) and a private key
+(which may not be known by anyone except the owner).
+
+
+The generation of such key pairs depends on [cryptographic algorithms](https://en.wikipedia.org/wiki/Algorithm) which are based
+on mathematical problems termed [one-way functions](https://en.wikipedia.org/wiki/One-way_function). Effective security requires
+keeping the private key private; the public key can be openly distributed without compromising security.
+<br/>
+<br/>
+## Short example
+To put the words above into context, let's look at an example to understand asymmetric encyrption better.
+
+### The problem
+Suppose Alice wishes to send Bob a valuable diamond, but the jewel will be stolen
+if sent unsecured. Both Alice and Bob have a variety of padlocks, but they don't
+own the same ones, meaning that their keys cannot open the other's locks.
+<br/>
+> How did Alice send the jewel to Bob?
+
+<br/>
+<br/>
+### <LightBulbIcon size={24} /> Solution
+Let's take a look at how one might solve this problem.
+1. Bob first sends Alice an unlocked padlock. Note that Bob would give *anyone* an
+unlocked padlock, as the only use for one is to send Bob something.
+2. Alice adds Bob's lock and sends the package to Bob, and
+3. Bob removes his lock and opens the package.
+<br/>
+
+<div style={{display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+![](encryption.png)
+</div>
+<br/>
+<br/>
+## <FileZipIcon size={25} /> The Algorithm
+The implementation of RSA makes heavy use of [modular arithmetic](https://brilliant.org/wiki/modular-arithmetic/), [Euler's theorem](https://brilliant.org/wiki/eulers-theorem/),
+and [Euler's totient function](https://brilliant.org/wiki/eulers-totient-function/). Notice that each step of the algorithm only involves
+multiplication, so it is easy for a computer to perform.
+<br/>
+### Creating a public key
+First, the receiver chooses two large prime numbers $p$ and $q$. Their product, $n$, will be half of the public key.
+
+$$
+\{p, q\} \in \mathbb{P} \qquad \land \qquad n = pq
+$$
+
+The receiver then calculates
+
+$$
+\varphi(pq)=(p-1)(q-1)
+$$
+
+<br/>
+<blockquote>
+#### Eulers Totient Function (refresher)
+Given a number $n \in \mathbb{Z}^+$, we know that:
+
+$$
+n = \prod_{i=0}^{k} p_i^{\alpha_i} \qquad \text{where} \qquad \forall \ i \in \mathbb{Z}^+ \implies p_i \in \mathbb{P}
+$$
+
+Thus, we define
+
+$$
+\varphi(n) = n\prod_{p|n} \left(1 - \frac{1}{p}\right)
+$$
+
+##### Corollary
+This directly implies that
+
+$$
+\sum_{d|n} \varphi(d) = n
+$$
+</blockquote>
+<br/>
+
+
+and chooses a number $e$ such that:
+$$
+\gcd{(\varphi(pq), e)} = 1
+$$
+
+#### Note:
+In practice, $e$ is often chosen to be $2^{16}+1=65537$, though it can be as small as $3$ in some cases. $e$ will be the other half of the public key.
+
+<Button href="/" text="Return Home" />
+<Footer />

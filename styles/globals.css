@@ -43,3 +43,25 @@ a {
     padding: 15px;
   }
 }
+
+.markdown-body h1 {
+  border: none;
+}
+
+.markdown-body h2 {
+  border: none;
+}
+.markdown-body h3 {
+  border: none;
+}
+.markdown-body h4 {
+  border: none;
+}
+
+.markdown-body hr {
+  height: 1px;
+}
+
+.markdown-body img {
+  border-radius: 10px;
+}

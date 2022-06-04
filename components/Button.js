@@ -5,7 +5,7 @@ function Button(props) {
   return (
     <div>
       <Link href={props.href} passHref>
-        <button className="bg-orange-50 p-4 rounded-lg hover:bg-orange-500 hover:text-white duration-75 mb-10 mt-10">
+        <button className="bg-blue-50 p-4 rounded-lg hover:bg-blue-500 hover:text-white duration-75 mb-10 mt-10">
           {props.text}
         </button>
       </Link>

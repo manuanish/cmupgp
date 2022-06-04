@@ -2,35 +2,67 @@ import BlogTitle from "@components/BlogTitle";
 import Post from "@components/Post";
 import PageTitle from "@components/PageTitle";
 import Footer from "@components/Footer";
+import {RepoLockedIcon, MarkGithubIcon, GlobeIcon, BookIcon} from '@primer/octicons-react';
+import {FaDiscord, FaInstagram, FaTwitter} from 'react-icons/fa'
 
-<PageTitle title="Welcome to Bon5R!" />
+<PageTitle title="CMU PGP | Home" />
 
 <BlogTitle
   title={
     <span>
-      CMU PGP
+      <RepoLockedIcon size={40}/> CMU PGP
     </span>
   }
-  subTitle={
-    <div>
-      Get started by editing <code>pages/index.mdx</code>
-    </div>
-  }
+  subTitle="Privacy; Enhanced."
+/>
+
+<div className="flex flex-row justify-center w-full">
+<div className="w-full">
+#### Project Info
+<MarkGithubIcon size={20}/> [Github Repo](https://github.com/manuanish/CMU-PGP)
+
+<GlobeIcon size={20} /> [Website](https://cmupgp.vercel.app)
+</div>
+<div className="w-full">
+#### Contact
+<span className="flex w-full mb-5"><FaDiscord size={24}/>&nbsp;iHxp#6160</span>
+<span className="flex mb-5"><FaInstagram size={24}/>&nbsp;manusanish<span className="text-neutral-400"></span></span>
+<span className="flex mb-5"><FaTwitter size={24}/>&nbsp;manusanish<span className="text-neutral-400"></span></span>
+</div>
+<div className="w-full">
+#### Helpful Resources
+<BookIcon size={20}/> [GnuPG Docs](https://www.gnupg.org/documentation/manuals.html)
+</div>
+</div>
+
+---
+
+<Post
+  title="Getting Started"
+  date="4/6/22"
+  description="In this page we will discuss what is CMU PGP and how to start using it. A short list of features CMU PGP includes, and more."
+  href="/getting-started"
 />
 
 <Post
-  title="Hello World!"
-  date="3/14/15"
-  description="This is an example post, demonstrating the power
-  of Bon5R. It displays some features that are included in this project."
-  href="/hello-world"
+  title="How does CMU PGP work?"
+  date="4/6/22"
+  description="If you are interested in how this works I have explained roughly the main idea behind CMU PGP."
+  href="/how-does-it-work"
 />
 
 <Post
-  title="Bon5R Documentation"
-  date="3/14/15"
-  description="Vist the documentation page to learn more about Bon5R and customize your application."
-  href="https://bon5r.com/docs/getting-started/installation"
+  title="CMU PGP Demo"
+  date="4/6/22"
+  description="A quick demonstration on how CMU PGP works."
+  href="/demo"
+/>
+
+<Post
+  title="Was this mildly interesting?"
+  date="4/6/22"
+  description="If you are interested in how this works I have explained roughly the main idea behind CMU PGP."
+  href="/lxxiii"
 />
 
 <Footer />

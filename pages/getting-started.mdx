@@ -1,0 +1,79 @@
+import Header from "@components/Header";
+import Author from "@components/Author";
+import Button from "@components/Button";
+import PageTitle from "@components/PageTitle";
+import {DownloadIcon, RepoLockedIcon, RepoCloneIcon, SlidersIcon} from '@primer/octicons-react'
+import Footer from "@components/Footer";
+
+<PageTitle title="CMU PGP | Getting Started" />
+<Header />
+
+# Getting Started
+<Author author="Manu Anish" date="4/6/22" displayName="manuanish" />
+---
+<br />
+<br />
+
+## <RepoLockedIcon size={25} /> What is CMU PGP?
+CMU PGP is an [encryption program](https://en.wikipedia.org/wiki/Encryption_software) that provides:
+
+- • cryptographic privacy
+- • authentication
+
+for data communication. CMU PGP is used for [signing](https://en.wikipedia.org/wiki/Digital_signature),
+[encrypting](https://en.wikipedia.org/wiki/Encryption), and [decrypting](https://en.wikipedia.org/?title=Decryption&redirect=no)
+texts, e-mails, files, directories, and whole disk partitions and
+to increase the security of e-mail communications.
+<br/>
+> PGP is an acronym for "Pretty Good Privacy"
+
+<br/>
+<br/>
+
+## <DownloadIcon size={25} /> Installation
+Let's take a look at how we can get started using CMU PGP.
+<br/>
+### 1. Clone the repository
+First, we clone the repository using the command
+
+```bash
+$ git clone https://github.com/manuanish/CMU-PGP.git && cd CMU-PGP
+```
+<br/>
+This will create a local copy of the code in the directory where the command is run.
+<br/>
+### 2. Activate the `venv`
+Now we can activate the [virtual environment](https://docs.python.org/3/tutorial/venv.html).
+
+```bash
+$ source .venv/bin/activate
+```
+<br/>
+This will allow python to access the packages required to run the application.
+
+<br/>
+### 3. Run the application
+We can start the program
+
+```bash
+(.venv) $ python3 src/main.py
+```
+<br/>
+And thats it! 🎉 The program should be running in your terminal.
+<br/>
+![](start.png)
+<br />
+<br />
+## <SlidersIcon size={25} /> Features
+Here are some of the main features that CMU PGP has to offer
+
+- `cgp --full-gen-key`  Generate a secure public/private key pair for [asymmetric encryption](https://en.wikipedia.org/wiki/Public-key_cryptography)
+
+- `cgp --clear-sign`  [Digitally sign](https://en.wikipedia.org/wiki/Digital_signature) a document, file, email, etc. to ensure that the message is actually from the sender (and not an imposter).
+
+- `cgp --encrypt`  [Encrypt](https://en.wikipedia.org/wiki/Encryption) a document, file, email, etc. such that it can **only be decrypted by the designated reciever**.
+
+- `cgp --decrypt`  [Decrypt](https://en.wikipedia.org/?title=Decryption&redirect=no) a document, file, email, etc. **only if the you are the designated reciever**.
+
+<Button href="/" text="Return Home" />
+<Footer />
