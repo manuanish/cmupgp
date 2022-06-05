@@ -65,3 +65,9 @@ a {
 .markdown-body img {
   border-radius: 10px;
 }
+
+@media (min-width: 450px) {
+  .mainThingy {
+    display: flex;
+  }
+}
