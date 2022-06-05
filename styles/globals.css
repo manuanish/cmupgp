@@ -71,3 +71,7 @@ a {
     display: flex;
   }
 }
+
+.math-display {
+  overflow-x: scroll;
+}
